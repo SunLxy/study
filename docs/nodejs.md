@@ -1,25 +1,30 @@
+# Nodejs
 
+## 1. 初始化一个项目
 
-## Nodejs
-
-#### 1. 初始化一个项目
-```
+```bash
 mkdir nodejs && cd nodejs && npm init -y
 ```
+
 自动生成一个package.json文件
 
-#### 2. 安装依赖
-```
+## 2. 安装依赖
+
+```bash
 npm install express 
 ```
+
 Express 是一种保持最低程度规模的灵活 Node.js Web 应用程序框架
 
-#### 3. 创建一个入口文件
-```
+## 3. 创建一个入口文件
+
+```bash
 mkdir src && touch index.js 
 ```
+
 在index.js 文件中写：
-```
+
+```js
 const express = require('express')
 const app = express()
 
@@ -29,16 +34,18 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => console.log('服务器已就绪'))
 ```
+
 之后在package.json中设置命令并运行命令：
-```
-# package.json
+
+```json5
+// package.json
 {
   "name": "nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js", 创建的命令
+    "start": "node ./src/index.js", // 创建的命令
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -49,19 +56,23 @@ app.listen(3000, () => console.log('服务器已就绪'))
   }
 }
 
-# 运行命令
-npm start
+运行命令
 
+```bash
+npm start
 ```
 
-#### 4. 路由
+## 4. 路由
 
 1. 创建routers文件夹及index.js文件
-```
+
+```bash
 mkdir routers && touch index.js
 ```
-2. 写路由
-```
+
+1. 写路由
+
+```js
 const express = require('express');
 const router = express.Router();
 
@@ -75,8 +86,10 @@ router.get('/about', function(req, res) {
 
 module.exports = router;
 ```
-3. 引入路由文件(在入口文件)写：
-```
+
+1. 引入路由文件(在入口文件)写：
+
+```js
 const express = require('express')
 const app = express()
 
@@ -87,13 +100,17 @@ app.listen(3000, () => console.log('服务器已就绪'))
 
 ```
 
-#### 5. 创建静态文件
+## 5. 创建静态文件
+
 1. 安装模板依赖 ejs
-```
+
+```bash
 npm install ejs
 ```
-2. 入口文件改写：
-```
+
+1. 入口文件改写：
+
+```js
 const express = require('express')
 const app = express()
 
@@ -105,11 +122,15 @@ app.use('/', indexRouter);
 
 app.listen(3000, () => console.log('服务器已就绪'))
 ```
-3. 创建第一个ejs文件
-```
-cd views && touch index.ejs
 
-# index.ejs
+1. 创建第一个ejs文件
+
+```bash
+cd views && touch index.ejs
+```
+
+```html
+<!--index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,15 +145,16 @@ cd views && touch index.ejs
 ```
 
 4. 添加路由
+
 在 routers/index.js 文件加入：
-```
+
+```js
 router.get('/index', function(req, res) {
     res.render("index",{});
 });
+
 ```
-5. 重新启动服务，页面打开:localhost:3000/index 
+
+1. 重新启动服务，页面打开:localhost:3000/index 
 
 案例：https://github.com/SunLxy/study_nodejs
-
-
-
