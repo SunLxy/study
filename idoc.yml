@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://jaywcjlove.github.io/idoc/schema
+# yaml-language-server: $schema=https://jaywcjlove.gitee.io/idoc/schema
+
+## directory of document source files
+## defalut: `docs`
+# -----------------------
+dir: docs
+
+
+## output directory of generated documents
+## defalut: `dist`
+# -----------------------
+output: dist
+
+
+## site name
+# -----------------------
+site: Study
+
+
+## Customize theme settings.
+## defalut: `default`
+# -----------------------
+theme: default
+
+## Navigation Menu.
+# -----------------------
+menus:
+  Home: index.html
+  Docker: docker.html 
+  Nodejs: nodejs.html 
