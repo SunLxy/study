@@ -29,3 +29,4 @@ menus:
   Home: index.html
   Docker: docker.html 
   Nodejs: nodejs.html 
+  Nginx: nginx.html 
