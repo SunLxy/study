@@ -30,7 +30,7 @@ nginx -s stop
 
 `brew`安装的`nginx`路径为`/opt/homebrew/etc/nginx`
 
-`nginx`配置文件树：
+### 1. `nginx`配置文件树
 
 ```bash
 .
@@ -55,7 +55,7 @@ nginx -s stop
 └── win-utf
 ```
 
-`nginx.conf`配置
+### 2. `nginx.conf`配置
 
 ```nginx
 # 1、几个常见配置项：
@@ -247,7 +247,7 @@ http {
 
 ```
 
-`servers/9001.conf`文件配置
+### 3. `servers/9001.conf`文件配置
 
 ```nginx
 
